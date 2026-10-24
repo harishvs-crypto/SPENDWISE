@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpendWise - History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="loadHistory()">
+    <div class="app-container">
+        <div class="sidebar">
+            <h2 onclick="toggleDarkMode()">SpendWise</h2>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="add_expense.html">Add Expense</a>
+            <a href="history.html" class="active">History</a>
+            <a href="analytics.html">Analytics</a>
+            <br><hr><br>
+            <a href="#" onclick="exportData('csv')">Export CSV</a>
+            <a href="#" onclick="exportData('txt')">Export TXT</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+        
+        <div class="main-content">
+            <h1>Expense History</h1>
+            <div style="margin-bottom: 20px; display: flex; gap: 10px;">
+                <input type="text" id="search-cat" placeholder="Search by Category" onkeyup="filterHistory()" style="padding:10px; border:1px solid #ccc; border-radius:5px;">
+                <input type="month" id="filter-month" onchange="filterHistory()" style="padding:10px; border:1px solid #ccc; border-radius:5px;">
+                <button onclick="sortHistory()" class="btn" style="width: auto; padding: 10px 20px;">Sort by Amount</button>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Date</th><th>Category</th><th>Amount</th><th>Mode</th><th>Description</th><th>Action</th></tr>
+                </thead>
+                <tbody id="history-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

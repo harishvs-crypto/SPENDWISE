@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>SpendWise</display-name>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <!-- Start BudgetAlertThread listener -->
+  <listener>
+    <listener-class>com.spendwise.listener.AppStartListener</listener-class>
+  </listener>
+
+  <!-- Login Servlet -->
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.spendwise.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- Register Servlet -->
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.spendwise.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- Add Expense Servlet -->
+  <servlet>
+    <servlet-name>AddExpenseServlet</servlet-name>
+    <servlet-class>com.spendwise.servlet.AddExpenseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddExpenseServlet</servlet-name>
+    <url-pattern>/AddExpenseServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- View Expense Servlet -->
+  <servlet>
+    <servlet-name>ViewExpenseServlet</servlet-name>
+    <servlet-class>com.spendwise.servlet.ViewExpenseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewExpenseServlet</servlet-name>
+    <url-pattern>/ViewExpenseServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- Delete Expense Servlet -->
+  <servlet>
+    <servlet-name>DeleteExpenseServlet</servlet-name>
+    <servlet-class>com.spendwise.servlet.DeleteExpenseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteExpenseServlet</servlet-name>
+    <url-pattern>/DeleteExpenseServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- Report Servlet -->
+  <servlet>
+    <servlet-name>ReportServlet</servlet-name>
+    <servlet-class>com.spendwise.servlet.ReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportServlet</servlet-name>
+    <url-pattern>/ReportServlet</url-pattern>
+  </servlet-mapping>
+
+</web-app>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpendWise - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="loadDashboard()">
+    <div class="app-container">
+        <div class="sidebar">
+            <h2 onclick="toggleDarkMode()">SpendWise</h2>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="add_expense.html">Add Expense</a>
+            <a href="history.html">History</a>
+            <a href="analytics.html">Analytics</a>
+            <br><hr><br>
+            <a href="#" onclick="exportData('csv')">Export CSV</a>
+            <a href="#" onclick="exportData('txt')">Export TXT</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+        
+        <div class="main-content">
+            <h1 id="welcome-text">Dashboard</h1>
+            
+            <div id="budget-warning" style="display:none; background:var(--danger); color:white; padding:10px; border-radius:5px; margin-bottom:20px;">
+                Warning: You have used more than 80% of your budget!
+            </div>
+
+            <div class="cards-grid">
+                <div class="stat-card">
+                    <h3>Total Expense</h3>
+                    <h2 id="total-expense">₹0</h2>
+                </div>
+                <div class="stat-card success">
+                    <h3>Remaining Budget</h3>
+                    <h2 id="rem-budget">₹0</h2>
+                </div>
+                <div class="stat-card danger">
+                    <h3>Top Category</h3>
+                    <h2 id="top-cat">-</h2>
+                </div>
+            </div>
+
+            <div class="stat-card" style="margin-bottom: 20px;">
+                <h3>Monthly Budget Progress</h3>
+                <div class="progress-container">
+                    <div class="progress-bar" id="budget-bar"></div>
+                </div>
+                <p id="budget-text" style="font-size: 12px; margin-top: 5px;"></p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Recent Transactions</h3>
+                <table class="data-table" id="recent-table">
+                    <thead>
+                        <tr><th>Date</th><th>Category</th><th>Amount</th><th>Mode</th></tr>
+                    </thead>
+                    <tbody id="recent-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
